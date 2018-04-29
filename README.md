@@ -40,12 +40,27 @@ Alternatively you could use [**homeean**](https://himpler.com/homeean) to instal
                     "statusCmd": "ls /tmp/file >> /dev/null; echo $?",
                     "checkInterval": 2000
                 }
-            }
+            },
+            {
+                  "deviceName": "FritzGuestWifi",
+                  "type": "FritzBoxPlugin",
+                  "pluginParams": {
+                      "ipAddress": "http://fritz.box/",
+                      "user": "username",
+                      "password": "passwort"
+                  }
+              }
         ]
 }
 ```
 
-This sample config exposes two switches to homee: HTTPSwitch and CMDSwitch. The former calls a http url when switched on or off. The latter one runs a cmd command when switched on or off. It also has a build in statusCmd that checks if the status has changed (outside of homee) and keeps it up-to-date.
+This sample config exposes three switches to homee: HTTPSwitch, CMDSwitch and FritzGuestWifi switch. #
+
+The first one calls a http url when switched on or off. 
+
+The second one runs a cmd command when switched on or off. It also has a build in statusCmd that checks if the status has changed (outside of homee) and keeps it up-to-date.
+
+The last one turns the Guest Wifi on a AVM FritzBox on or off.
 
 ## Troubleshooting
 
